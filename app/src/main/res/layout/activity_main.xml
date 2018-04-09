@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context="org.bts.android.activitymanager.MainActivity">
 
+    <Button
+        android:id="@+id/btn_launch_activity2_activity_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Launch Act 2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
