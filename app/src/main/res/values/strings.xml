@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ActivityManager</string>
+    <string name="button_name">My button name</string>
 </resources>
