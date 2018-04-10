@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private TextView tvInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initViews();
 
         Toast.makeText(this, "onCreate()", Toast.LENGTH_SHORT).show();
+
+        tvInfo = findViewById(R.id.tv_info_activity_main);
     }
 
     private void initViews() {
@@ -89,18 +93,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        Log.d("MY TAG", "requestCode: " + requestCode + ", resultCode: " + resultCode);
-
         if (requestCode == 11 && resultCode == Activity.RESULT_OK) {
-
             String inf =
-                    data.getStringExtra("result");
-
-            Toast.makeText(this,
-                    inf,
-                    Toast.LENGTH_SHORT).show();
+                    data.getStringExtra(SecondActivity.RESULT_ID);
+            tvInfo.setText(inf);
         }
-
-
     }
 }
